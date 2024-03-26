@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Airport Fuel Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="reportsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Fuel Transaction
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="reportsDropdown">
+                        <a class="dropdown-item" href="/Views/TransactionForm.html">Add Transaction</a>
+                        <a class="dropdown-item" href="/Views/TransactionsList.html">All Transactions</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="addDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Airport
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="addDropdown">
+
+                        <a class="dropdown-item" href="/Views/AirportsList.html">All Airports</a>
+                        <a class="dropdown-item" href="/Views/AirportForm.html">Add Airport</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="addDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Aircraft
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="addDropdown">
+                        <a class="dropdown-item" href="/Views/AircraftForm.html">Add Aircraft</a>
+                        <a class="dropdown-item" href="/Views/AircraftsList.html">All Aircrafts</a>
+                    </div>
+                </li>                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="addDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reports
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="addDropdown">
+                        <a class="dropdown-item" href="/Views/AirportSummary.html">Airport Summary Report</a>
+                        <a class="dropdown-item" href="/Views/FuelConsumptionReport.html">Fuel Consumption Report</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger log-out-btn">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script src="/Scripts/navbar.js"></script>

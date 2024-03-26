@@ -1,0 +1,355 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj",
+        "projectName": "AirportFuelManagementWebAPI.Business",
+        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj",
+        "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj"
+              },
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj",
+        "projectName": "AirportFuelManagementWebAPI.DAL",
+        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj",
+        "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
+              },
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj",
+        "projectName": "AirportFuelManagementWebAPI.Models",
+        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj",
+        "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
+        "projectName": "AirportFuelManagementWebAPI.Utils",
+        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
+        "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj",
+        "projectName": "AirportFuelManagementWebAPI",
+        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj",
+        "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj"
+              },
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj"
+              },
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
+              },
+              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

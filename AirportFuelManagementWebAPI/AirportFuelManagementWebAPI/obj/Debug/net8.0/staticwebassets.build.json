@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "+J7H4UlddjLDRBBxYcQ/mv7fkUPSVINXvS00kvHozrs=",
+  "Source": "AirportFuelManagementWebAPI",
+  "BasePath": "_content/AirportFuelManagementWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
