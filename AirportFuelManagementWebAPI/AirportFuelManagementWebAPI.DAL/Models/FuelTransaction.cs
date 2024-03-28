@@ -17,9 +17,9 @@ public partial class FuelTransaction
 
     public int AirportId { get; set; }
 
-    public int AircraftId { get; set; }
+    public int? AircraftId { get; set; }
 
-    public virtual Aircraft Aircraft { get; set; } = null!;
+    public virtual Aircraft? Aircraft { get; set; }
 
     public virtual Airport Airport { get; set; } = null!;
 }

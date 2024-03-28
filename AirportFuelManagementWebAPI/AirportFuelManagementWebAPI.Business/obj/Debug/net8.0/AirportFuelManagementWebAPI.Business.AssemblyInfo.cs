@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirportFuelManagementWebAPI.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d453d4d5ba69ab84b2fc9ae03e40513cf55b5e88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe1d6a81f596781fddd79ac1a0754e11d0e66edf")]
 [assembly: System.Reflection.AssemblyProductAttribute("AirportFuelManagementWebAPI.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AirportFuelManagementWebAPI.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

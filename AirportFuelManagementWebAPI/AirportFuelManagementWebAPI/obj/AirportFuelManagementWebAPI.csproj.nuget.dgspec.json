@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj": {}
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj",
+        "projectUniqueName": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj",
         "projectName": "AirportFuelManagementWebAPI.Business",
-        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj",
+        "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj",
         "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\obj\\",
+        "outputPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj"
               },
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj",
+        "projectUniqueName": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj",
         "projectName": "AirportFuelManagementWebAPI.DAL",
-        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj",
+        "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj",
         "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\obj\\",
+        "outputPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,11 +90,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
               },
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj"
               }
             }
           }
@@ -146,14 +146,14 @@
         }
       }
     },
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj",
+        "projectUniqueName": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj",
         "projectName": "AirportFuelManagementWebAPI.Models",
-        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj",
+        "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj",
         "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\obj\\",
+        "outputPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -201,14 +201,14 @@
         }
       }
     },
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
+        "projectUniqueName": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
         "projectName": "AirportFuelManagementWebAPI.Utils",
-        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
+        "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
         "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\obj\\",
+        "outputPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -256,14 +256,14 @@
         }
       }
     },
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj": {
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj",
         "projectName": "AirportFuelManagementWebAPI",
-        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj",
+        "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.csproj",
         "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\obj\\",
+        "outputPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -280,17 +280,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj"
               },
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.DAL\\AirportFuelManagementWebAPI.DAL.csproj"
               },
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
               },
-              "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
-                "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj"
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj"
               }
             }
           }

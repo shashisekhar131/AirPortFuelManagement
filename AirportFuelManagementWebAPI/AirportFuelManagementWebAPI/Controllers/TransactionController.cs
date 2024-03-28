@@ -11,11 +11,9 @@ namespace AirportFuelManagementWebAPI.Controllers
     public class TransactionController : ControllerBase
     {
         private readonly IBusiness business;
-        private readonly ILogger<TransactionController> logger;
 
-        public TransactionController(ILogger<TransactionController> logger, IBusiness business)
+        public TransactionController( IBusiness business)
         {
-            this.logger = logger;
             this.business = business;
         }
         [Authorize]
@@ -28,13 +26,17 @@ namespace AirportFuelManagementWebAPI.Controllers
             {
                 return Ok(transactions);
             }
-            return StatusCode(StatusCodes.Status500InternalServerError);
+            return NotFound();
         }
         [Authorize]
         [HttpGet("GetTransactionById/{id}")]
         public async Task<ActionResult> GetTransactionById(int id)
         {
             FuelTransactionModel transaction = await business.GetTransactionById(id);
+            if(transaction == null)
+            {
+                return NotFound();
+            }
             return Ok(transaction);
         }
         [Authorize]
@@ -43,18 +45,22 @@ namespace AirportFuelManagementWebAPI.Controllers
         {
 
             List<AirportTransactionInfo> transactions = await business.FuelConsumptionReport();
-            return Ok(transactions);
+            if (transactions.Any())
+            {
+                return Ok(transactions);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
         [Authorize]
         [HttpPost("InsertTransaction")]
         public async Task<ActionResult> InsertTransaction(FuelTransactionModel Transaction)
         {
 
-            bool flag = await business.InsertTransaction(Transaction);
-            if (flag)
-                return Ok(flag);
-            else
-                return StatusCode(StatusCodes.Status500InternalServerError, "Failed to insert Transaction.");
+            Tuple<string, bool> result = await business.InsertTransaction(Transaction);
+            return Ok(result);
         }
         [Authorize]
         [HttpDelete("RemoveAllTransactions")]
@@ -64,7 +70,7 @@ namespace AirportFuelManagementWebAPI.Controllers
             if (flag)
                 return Ok(flag);
             else
-                return StatusCode(StatusCodes.Status500InternalServerError, "Failed to insert Transaction.");
+                return BadRequest(new { Message = "Failed to remove transactions" });
         }
     }
 }

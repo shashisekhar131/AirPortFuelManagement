@@ -1,54 +1,43 @@
 
 function populateAirportForm(id){
-    $.ajax({
-        url: 'https://localhost:7053/api/Airport/' + id, 
-        type: 'GET', 
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function(response) {
-            $('#AirportName').val(response.airportName)
-            $('#FuelCapacity').val(response.fuelCapacity);
-       },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
+
+    function handleSuccess(response) {
+        $('#AirportName').val(response.airportName)
+        $('#FuelCapacity').val(response.fuelCapacity);
+    }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makeGetRequest('/Airport/' + id, handleSuccess, handleError);
 }
 function insertAirport(airport){ 
-    $.ajax({
-        url: 'https://localhost:7053/api/Airport/InsertAirport', 
-        type: 'POST', 
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        contentType: 'application/json',
-        data: JSON.stringify(airport), 
-        success: function(response) {
-            window.location.href="../Views/AirportsList.html";      
-       },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
+    function handleSuccess(response) {
+        window.location.href="../Views/AirportsList.html"; 
+   }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makePostRequest('/Airport/InsertAirport',airport, handleSuccess, handleError);
+ 
 }
 
 function updateAirport(airport){
-    $.ajax({
-        url: 'https://localhost:7053/api/Airport/UpdateAirport', 
-        type: 'PUT', 
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        contentType: 'application/json',
-        data: JSON.stringify(airport), 
-        success: function(response) {
-            window.location.href="../Views/AirportsList.html";     
-       },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
+    function handleSuccess(response) {
+        window.location.href="../Views/AirportsList.html";     
+    }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makePutRequest('/Airport/UpdateAirport',airport, handleSuccess, handleError);
 }
 
 $(document).ready(function(){

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 using AirportFuelManagementWebAPI.Models;
+using System.Linq.Expressions;
 
 namespace AirportFuelManagementWebAPI.DAL
 {
@@ -19,100 +20,52 @@ namespace AirportFuelManagementWebAPI.DAL
             this.logger = logger;
         }
        
-        public async Task<List<AirportModel>> GetAllAirports()
+        public async Task<List<Airport>> GetAllAirports()
         {
-            List<AirportModel> airports = new List<AirportModel>();
-
-            try
-            {
-                airports = await context.Airports
-                                         .Select(s => new AirportModel
-                                         {
-                                             AirportId = s.AirportId,
-                                             AirportName = s.AirportName,
-                                             FuelAvailable = s.FuelAvailable,
-                                             FuelCapacity = s.FuelCapacity
-                                         })
-                                         .ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);                
-            }
-
+            List<Airport> airports = new List<Airport>();            
+            airports = await context.Airports.ToListAsync();
             return airports;
         }
 
-        public async Task<AirportModel> GetAirportById(int id)
+        public async Task<Airport> GetAirportById(int id)
         {
-            AirportModel airport = new AirportModel();
-
-            try
+            Airport airport = new Airport();
+            airport = await context.Airports.FirstOrDefaultAsync(a => a.AirportId == id);
+            if (airport != null)
             {
-                var tempAirport = await context.Airports.FirstOrDefaultAsync(a => a.AirportId == id);
-
-                if (tempAirport != null)
-                {
-                    airport = new AirportModel
-                    {
-                        AirportId = tempAirport.AirportId,
-                        AirportName = tempAirport.AirportName,
-                        FuelAvailable = tempAirport.FuelAvailable,
-                        FuelCapacity = tempAirport.FuelCapacity
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);           
-            }
+                return airport;
+            }      
 
             return airport;
         }
 
-        public async Task<bool> InsertAirport(AirportModel airport)
+        public async Task<bool> InsertAirport(Airport airport)
         {
             bool flag = false;
-            try
-            {
-                var tempAirport = new Airport
-                {
-                    AirportName = airport.AirportName,
-                    FuelAvailable = airport.FuelAvailable,
-                    FuelCapacity = airport.FuelCapacity
-                };
-                await context.Airports.AddAsync(tempAirport);
-                await context.SaveChangesAsync();
-                flag = true;
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-            }
+            
+            await context.Airports.AddAsync(airport);
+            await context.SaveChangesAsync();
+            flag = true;
+          
             return flag;
         }
         public async Task<bool> UpdateAirport(AirportModel airport)
         {
             bool flag = false;
-            try
-            {
-                var existingAirport = await context.Airports.FirstOrDefaultAsync(a => a.AirportId == airport.AirportId);
+            
+            var existingAirport = await context.Airports.FirstOrDefaultAsync(a => a.AirportId == airport.AirportId);
 
-                if (existingAirport != null)
-                {
-                    existingAirport.AirportName = airport.AirportName;
-                    existingAirport.FuelAvailable = airport.FuelAvailable;
-                    existingAirport.FuelCapacity = airport.FuelCapacity;
-
-                    context.Airports.Update(existingAirport);
-                    await context.SaveChangesAsync();
-                    flag = true;
-                }
-            }
-            catch (Exception ex)
+            if (existingAirport != null)
             {
-                logger.LogException(ex);
+                existingAirport.AirportName = airport.AirportName;
+                existingAirport.FuelAvailable = airport.FuelAvailable;
+                existingAirport.FuelCapacity = airport.FuelCapacity;
+
+                context.Airports.Update(existingAirport);
+                await context.SaveChangesAsync();
+                flag = true;
             }
+            
             return flag;
         }
 
@@ -120,245 +73,187 @@ namespace AirportFuelManagementWebAPI.DAL
         {
              List<AircraftModel> aircrafts = new List<AircraftModel>();
 
-            try
-            {
-                var airports = await context.Airports.ToListAsync();
+           
+            var airports = await context.Airports.ToListAsync();
 
-                aircrafts = await context.Aircraft
-                    .Select(s => new AircraftModel
-                    {
-                        AircraftId = s.AircraftId,
-                        AircraftNumber = s.AircraftNumber,
-                        AirLine = s.AirLine,
-                        Source = s.Source,
-                        Destination = s.Destination
-                    })
-                    .ToListAsync();
+            aircrafts = await context.Aircraft
+                .Select(s => new AircraftModel
+                {
+                    AircraftId = s.AircraftId,
+                    AircraftNumber = s.AircraftNumber,
+                    AirLine = s.AirLine,
+                    SourceId = s.SourceId,
+                    DestinationId = s.DestinationId
+                })
+                .ToListAsync();
 
                 
-                foreach (var aircraft in aircrafts)
-                {
-                    aircraft.SourceName = airports.FirstOrDefault(a => a.AirportId == Convert.ToInt32(aircraft.Source))?.AirportName;
-                    aircraft.DestinationName = airports.FirstOrDefault(a => a.AirportId == Convert.ToInt32(aircraft.Destination))?.AirportName;
-                }
-            }
-            catch (Exception ex)
+            foreach (var aircraft in aircrafts)
             {
-                logger.LogException(ex);
+                aircraft.SourceName = airports.FirstOrDefault(a => a.AirportId == aircraft.SourceId)?.AirportName;
+                aircraft.DestinationName = airports.FirstOrDefault(a => a.AirportId == aircraft.DestinationId)?.AirportName;
             }
+           
 
             return aircrafts;
         }
 
 
-        public async Task<AircraftModel> GetAircraftById(int id)
+        public async Task<Aircraft> GetAircraftById(int id)
         {
-            AircraftModel aircraft = new AircraftModel();
-
-            try
+            Aircraft aircraft = new Aircraft();
+  
+            aircraft = await context.Aircraft.FirstOrDefaultAsync(a => a.AircraftId == id);
+                
+            if (aircraft != null)
             {
-                var tempAircraft = await context.Aircraft.FirstOrDefaultAsync(a => a.AircraftId == id);
-
-                if (tempAircraft != null)
-                {
-                    aircraft = new AircraftModel
-                    {
-                        AircraftId = tempAircraft.AircraftId,
-                        AircraftNumber = tempAircraft.AircraftNumber,
-                        AirLine = tempAircraft.AirLine,
-                        Source = tempAircraft.Source,
-                        Destination = tempAircraft.Destination
-                    };
-                }
+                return aircraft;                   
             }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-            }
-
+            
             return aircraft;
         }
 
-        public async Task<bool> InsertAircraft(AircraftModel aircraft)
+        public async Task<bool> InsertAircraft(Aircraft aircraft)
         {
             bool flag = false;
-            try
-            {
-                var tempAircraft = new Aircraft
-                {
-                    AircraftNumber = aircraft.AircraftNumber,
-                    AirLine = aircraft.AirLine,
-                    Source = aircraft.Source,
-                    Destination = aircraft.Destination
-                };
-                await context.Aircraft.AddAsync(tempAircraft);
-                await context.SaveChangesAsync();
-                flag = true;
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-            }
+                      
+            await context.Aircraft.AddAsync(aircraft);
+            await context.SaveChangesAsync();
+            flag = true;
+          
             return flag;
         }
 
         public async Task<bool> UpdateAircraft(AircraftModel aircraft)
         {
             bool flag = false;
-            try
-            {
-                var existingAircraft = await context.Aircraft.FirstOrDefaultAsync(a => a.AircraftId == aircraft.AircraftId);
+            var existingAircraft = await context.Aircraft.FirstOrDefaultAsync(a => a.AircraftId == aircraft.AircraftId);
 
-                if (existingAircraft != null)
-                {
-                    existingAircraft.AircraftNumber = aircraft.AircraftNumber;
-                    existingAircraft.AirLine = aircraft.AirLine;
-                    existingAircraft.Source = aircraft.Source;
-                    existingAircraft.Destination = aircraft.Destination;
-
-                    context.Aircraft.Update(existingAircraft);
-                    await context.SaveChangesAsync();
-                    flag = true;
-                }
-            }
-            catch (Exception ex)
+            if (existingAircraft != null)
             {
-                logger.LogException(ex);
+                existingAircraft.AircraftNumber = aircraft.AircraftNumber;
+                existingAircraft.AirLine = aircraft.AirLine;
+                existingAircraft.SourceId = aircraft.SourceId;
+                existingAircraft.DestinationId = aircraft.DestinationId;
+
+                context.Aircraft.Update(existingAircraft);
+                await context.SaveChangesAsync();
+                flag = true;
             }
+           
             return flag;
         }
         public async Task<List<FuelTransactionModel>> GetAllTransactions()
         {
             List<FuelTransactionModel> transactions = new List<FuelTransactionModel>();
-
-            try
+            // Eager loading 
+                transactions = await context.FuelTransactions
+            .Include(t => t.Aircraft) 
+            .Include(t => t.Airport)  
+            .Select(t => new FuelTransactionModel
             {
-                List<FuelTransaction> fuelTransactions = await context.FuelTransactions.ToListAsync();
-
-                List<Aircraft> aircrafts = await context.Aircraft.ToListAsync();
-
-                List<Airport> airports = await context.Airports.ToListAsync();
-
-                transactions = fuelTransactions
-                                .Select(t => new FuelTransactionModel
-                                {
-                                    TransactionId = t.TransactionId,
-                                    AircraftId = t.AircraftId,
-                                    AirportId = t.AirportId,
-                                    Quantity = t.Quantity,
-                                    TransactionType = t.TransactionType,
-                                    TransactionIdparent = t.TransactionIdparent,
-                                    TransactionTime = t.TransactionTime,
-                                    AircraftName = aircrafts.FirstOrDefault(a => a.AircraftId == t.AircraftId).AircraftNumber,
-                                    AirportName = airports.FirstOrDefault(ap => ap.AirportId == t.AirportId).AirportName
-                                })
-                                .ToList();
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-            }
+                TransactionId = t.TransactionId,
+                AircraftId = t.AircraftId,
+                AirportId = t.AirportId,
+                Quantity = t.Quantity,
+                TransactionType = t.TransactionType,
+                TransactionIdparent = t.TransactionIdparent,
+                TransactionTime = t.TransactionTime,
+                AircraftName = t.Aircraft != null ? t.Aircraft.AircraftNumber : "",
+                AirportName = t.Airport != null ? t.Airport.AirportName : ""
+            })
+            .ToListAsync();           
 
             return transactions;
         }
 
 
-        public async Task<bool> InsertTransaction(FuelTransactionModel transaction)
+        public async Task<Tuple<string, bool>> InsertTransaction(FuelTransactionModel transaction)
         {
-            try
-            {
                 var airport = await context.Airports.FirstOrDefaultAsync(a => a.AirportId == transaction.AirportId);
-                if (airport == null)
+
+                // before transaction total fuel for airport is  total IN(=1) - total OUT(=2)
+                decimal totalFuelIN = (await context.FuelTransactions
+                    .Where(ft => ft.AirportId == transaction.AirportId && ft.TransactionType == 1)
+                    .SumAsync(ft => (decimal?)ft.Quantity) ?? 0);
+
+                decimal totalFuelOUT = (await context.FuelTransactions
+                        .Where(ft => ft.AirportId == transaction.AirportId && ft.TransactionType == 2)
+                        .SumAsync(ft => (decimal?)ft.Quantity) ?? 0);
+
+                decimal totalFuelAvailable = totalFuelIN - totalFuelOUT;
+
+                decimal fuelAvailableAfterTransaction = totalFuelAvailable;
+
+                if (transaction.TransactionType == 1)
                 {
-                    return false;
+                    fuelAvailableAfterTransaction += transaction.Quantity;
+                }
+                else if (transaction.TransactionType == 2)
+                {
+                    fuelAvailableAfterTransaction -= transaction.Quantity;
                 }
 
-                decimal totalFuelAvailable = (await context.FuelTransactions
-                    .Where(ft => ft.AirportId == transaction.AirportId && ft.TransactionType == 1)
-                    .SumAsync(ft => (decimal?)ft.Quantity) ?? 0)
-                    - (await context.FuelTransactions
-                        .Where(ft => ft.AirportId == transaction.AirportId && ft.TransactionType == 2)
-                        .SumAsync(ft => (decimal?)ft.Quantity) ?? 0)
-                    + transaction.Quantity;
+                if (fuelAvailableAfterTransaction < 0 || fuelAvailableAfterTransaction > airport.FuelCapacity)
+                {
+                    if (fuelAvailableAfterTransaction < 0)
+                    {
+                        return Tuple.Create("Insufficient fuel(fuel available is " + totalFuelAvailable + ")", false);
+                    }
+
+                    if (fuelAvailableAfterTransaction > airport.FuelCapacity)
+                    {
+                        return Tuple.Create("Exceeded airport capacity(airport can hold only " + (airport.FuelCapacity - totalFuelAvailable) + " fuel)", false);
+                    }
+                }
+
+                // If validation passes, add the transaction to the database
                 FuelTransaction dbTransaction = new FuelTransaction()
                 {
                     TransactionTime = DateTime.Now,
                     TransactionType = transaction.TransactionType,
                     AirportId = transaction.AirportId,
                     Quantity = transaction.Quantity,
-                    TransactionIdparent = transaction.TransactionIdparent
+                    TransactionIdparent = transaction.TransactionIdparent,
+                    AircraftId = transaction.AircraftId,
                 };
-                if (transaction.AircraftId != 0)
-                {
-                    dbTransaction.AircraftId = transaction.AircraftId;
-
-                }
-                else
-                {   // for IN transaction default aircraft 
-                    dbTransaction.AircraftId = 1;
-                }
-
-
+               
 
                 context.FuelTransactions.Add(dbTransaction);
+                airport.FuelAvailable = fuelAvailableAfterTransaction;
+
                 await context.SaveChangesAsync();
 
-                var fuelAvailable = (await context.FuelTransactions
-                    .Where(ft => ft.AirportId == transaction.AirportId && ft.TransactionType == 1)
-                    .SumAsync(ft => (decimal?)ft.Quantity) ?? 0)
-                    - (await context.FuelTransactions
-                        .Where(ft => ft.AirportId == transaction.AirportId && ft.TransactionType == 2)
-                        .SumAsync(ft => (decimal?)ft.Quantity) ?? 0);
-
-                if (fuelAvailable < 0 || fuelAvailable > airport.FuelCapacity)
-                {
-                    context.FuelTransactions.Remove(dbTransaction);
-                    await context.SaveChangesAsync();
-                    return false;
-                }
-
-                airport.FuelAvailable = fuelAvailable;
-                await context.SaveChangesAsync();
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-                return false;
-            }
+                return Tuple.Create("Transaction successful", true);
+           
         }
+
 
         public async Task<FuelTransactionModel> GetTransactionById(int id)
         {
             FuelTransactionModel fuelTransaction = new FuelTransactionModel();
 
-            try
-            {
-                var tempFuelTransaction = await context.FuelTransactions.FirstOrDefaultAsync(ft => ft.TransactionId == id);
-               
-                if (tempFuelTransaction != null)
-                {
-                    // Map the properties from the database entity to the model
-                    fuelTransaction = new FuelTransactionModel
-                    {
-                        TransactionId = tempFuelTransaction.TransactionId,
-                        TransactionTime = tempFuelTransaction.TransactionTime,
-                        TransactionType = tempFuelTransaction.TransactionType,
-                        Quantity = tempFuelTransaction.Quantity,
-                        TransactionIdparent = tempFuelTransaction.TransactionIdparent,
-                        AirportId = tempFuelTransaction.AirportId,
-                        AircraftId = tempFuelTransaction.AircraftId,
-                        AirportName = (await context.Airports.FirstOrDefaultAsync(a => a.AirportId == tempFuelTransaction.AirportId))?.AirportName,
-                        AircraftName = (await context.Aircraft.FirstOrDefaultAsync(ac => ac.AircraftId == tempFuelTransaction.AircraftId))?.AircraftNumber
+            var  tempFuelTransaction = await context.FuelTransactions
+            .Include(ft => ft.Aircraft) 
+            .Include(ft => ft.Airport)  
+            .FirstOrDefaultAsync(ft => ft.TransactionId == id);
 
-                    };
-                }
-            }
-            catch (Exception ex)
+            if (tempFuelTransaction != null)
             {
-                logger.LogException(ex);
-            }
+                    fuelTransaction = new FuelTransactionModel
+                {
+                    TransactionId = tempFuelTransaction.TransactionId,
+                    TransactionTime = tempFuelTransaction.TransactionTime,
+                    TransactionType = tempFuelTransaction.TransactionType,
+                    Quantity = tempFuelTransaction.Quantity,
+                    TransactionIdparent = tempFuelTransaction.TransactionIdparent,
+                    AirportId = tempFuelTransaction.AirportId,
+                    AircraftId = tempFuelTransaction.AircraftId,
+                    AirportName = tempFuelTransaction.Airport?.AirportName,
+                    AircraftName = tempFuelTransaction.Aircraft?.AircraftNumber
+                };
+
+            }            
 
             return fuelTransaction;
         }
@@ -366,127 +261,94 @@ namespace AirportFuelManagementWebAPI.DAL
         public async Task<bool> RemoveAllTransactions()
         {
             bool flag = false;
-            try
-            {
-                var allTransactions = await context.FuelTransactions.ToListAsync();
+            
+            var allTransactions = await context.FuelTransactions.ToListAsync();
                 
-                context.RemoveRange(allTransactions);
+            context.RemoveRange(allTransactions);
 
-                await context.SaveChangesAsync();
+            await context.SaveChangesAsync();
 
-                var airports = await context.Airports.ToListAsync();
+            var airports = await context.Airports.ToListAsync();
 
-                foreach (var airport in airports)
-                {
-                    airport.FuelAvailable = 0;
-                }
-                await context.SaveChangesAsync();
-                flag = true;
-            }
-            catch (Exception ex)
+            foreach (var airport in airports)
             {
-                logger.LogException(ex);
-
+                airport.FuelAvailable = 0;
             }
+            await context.SaveChangesAsync();
+            flag = true;
+           
             return flag;
         }
         public async Task<bool> InsertUser(UserModel user)
         {
             bool flag = false;
-            try
+            
+            var newUser = new User
             {
-                var newUser = new User
-                {
-                    Name = user.Name,
-                    Email = user.Email,
-                    Password = user.Password
-                };
+                Name = user.Name,
+                Email = user.Email,
+                Password = user.Password
+            };
 
-                context.Users.Add(newUser);
-                await context.SaveChangesAsync();
-                flag  = true; 
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-               
-            }
+            context.Users.Add(newUser);
+            await context.SaveChangesAsync();
+            flag  = true; 
+            
             return flag;
         }
         public async Task<int> CheckIfUserExists(string userEmail, string userPassword)
         {
             int userId = -1;
-            try
-            {
-                var user = await context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+            
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 
-                // Check if user exists and password matches (case-sensitive)
-                if (user != null && user.Password == userPassword)
-                {
-                    userId = user.UserId;
-                }
-            }
-            catch (Exception ex)
+            // Check if user exists and password matches (case-sensitive)
+            if (user != null && user.Password == userPassword)
             {
-                logger.LogException(ex);
+                userId = user.UserId;
             }
+            
             return userId;
         }
 
         public async Task<bool> CheckIfEmailAlreadyExists(string userEmail)
         {
             bool flag = false;
-            try
-            {
-                var user = await context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+            
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 
-                if (user != null)
-                {
-                    flag = true;
-                }
-            }
-            catch (Exception ex)
+            if (user != null)
             {
-                logger.LogException(ex);
+                flag = true;
             }
+            
             return flag;
         }
 
         public async Task<List<AirportTransactionInfo>> FuelConsumptionReport()
         {
             List<AirportTransactionInfo> airportTransactionsInfo = new List<AirportTransactionInfo>();
-            try
-            {
-                var aircrafts = await context.Aircraft.ToListAsync(); // Fetch aircraft data
+            
+            var aircrafts = await context.Aircraft.ToListAsync(); // Fetch aircraft data
 
-                airportTransactionsInfo = await context.Airports
-                    .Select(airport => new AirportTransactionInfo
-                    {
-                        AirportName = airport.AirportName,
-                        AirportFuelAvailable =airport.FuelAvailable??0, // Handle nullable FuelAvailable property
-                        Transactions = airport.FuelTransactions
-                            .Select(ft => new TransactionItem
-                            {
-                                TransactionTime = ft.TransactionTime,
-                                TransactionType = ft.TransactionType,
-                                Quantity = ft.Quantity,
-                                AircraftName = ft.Aircraft.AircraftNumber
-                            }).ToList()
-                    })
-                    .ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                logger.LogException(ex);
-            }
+            airportTransactionsInfo = await context.Airports
+                .Select(airport => new AirportTransactionInfo
+                {
+                    AirportName = airport.AirportName,
+                    AirportFuelAvailable =airport.FuelAvailable??0, // Handle nullable FuelAvailable property
+                    Transactions = airport.FuelTransactions
+                        .Select(ft => new TransactionItem
+                        {
+                            TransactionTime = ft.TransactionTime,
+                            TransactionType = ft.TransactionType,
+                            Quantity = ft.Quantity,
+                            AircraftName = ft.Aircraft.AircraftNumber
+                        }).ToList()
+                })
+                .ToListAsync();
+           
             return airportTransactionsInfo;
         }
-
-
-
-
-
-
 
     }
 }

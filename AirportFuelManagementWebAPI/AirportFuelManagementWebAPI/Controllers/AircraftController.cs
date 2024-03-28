@@ -11,11 +11,9 @@ namespace AirportFuelManagementWebAPI.Controllers
     public class AircraftController : ControllerBase
     {
         private readonly IBusiness business;
-        private readonly ILogger<AircraftController> logger;
 
-        public AircraftController(ILogger<AircraftController> logger, IBusiness business)
+        public AircraftController(IBusiness business)
         {
-            this.logger = logger;
             this.business = business;
         }
         [Authorize]
@@ -28,7 +26,7 @@ namespace AirportFuelManagementWebAPI.Controllers
             {
                 return Ok(aircrafts);
             }
-            return StatusCode(StatusCodes.Status500InternalServerError);            
+            return NotFound();            
         }
         [Authorize]
         [HttpGet("{id}")]
@@ -37,7 +35,7 @@ namespace AirportFuelManagementWebAPI.Controllers
             
             AircraftModel aircraft = await business.GetAircraftById(id);
             if (aircraft == null)
-            return StatusCode(StatusCodes.Status500InternalServerError);
+            return NotFound();
 
             return Ok(aircraft);
             
@@ -51,7 +49,7 @@ namespace AirportFuelManagementWebAPI.Controllers
             if (flag)
                 return Ok(aircraft);
             else
-                return StatusCode(StatusCodes.Status500InternalServerError, "Failed to insert aircraft.");
+                return BadRequest(new { Message = "Failed to insert aircraft" });
            
         }
         [Authorize]
@@ -63,8 +61,8 @@ namespace AirportFuelManagementWebAPI.Controllers
             if (flag)
                 return Ok(aircraft);
             else
-            return StatusCode(StatusCodes.Status500InternalServerError, "Failed to insert aircraft.");
-       
+                return BadRequest(new { Message = "Failed to update aircraft" });
+
         }
     }
 }

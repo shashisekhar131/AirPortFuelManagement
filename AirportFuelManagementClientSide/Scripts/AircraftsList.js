@@ -9,14 +9,9 @@ function loadAircraftData() {
         var aircraftId = $(this).data('aircraft-id');
         window.location.href = "../Views/AircraftForm.html?id=" + aircraftId;
     });
-    $.ajax({
-        url: 'https://localhost:7053/api/Aircraft', 
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function (data) {
-            console.log(data);
+
+    function handleSuccess(data) {
+        console.log(data);
             aircraftTable.clear();
             data.forEach(function (aircraft) {
                 var editButton = '<button class="btn btn-primary btn-sm edit-btn" data-aircraft-id="' + aircraft.aircraftId + '">Edit</button>';
@@ -31,13 +26,16 @@ function loadAircraftData() {
                 ]);
                 
             });
-            aircraftTable.draw();         
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-            console.log(xhr.responseText);
-        }
-    });
+            aircraftTable.draw(); 
+    }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makeGetRequest('/Aircraft', handleSuccess, handleError);
+
 }
 
 $(document).ready(function () {    

@@ -18,7 +18,7 @@ namespace AirportFuelManagementWebAPI.Business
         public Task<bool> InsertAircraft(AircraftModel aircraft);
         public Task<bool> UpdateAircraft(AircraftModel aircraft);
         public Task<List<FuelTransactionModel>> GetAllTransactions();
-        public Task<bool> InsertTransaction(FuelTransactionModel transaction);
+        public Task<Tuple<string, bool>> InsertTransaction(FuelTransactionModel transaction);
         public Task<bool> InsertUser(UserModel user);
         public Task<int> CheckIfUserExists(string userEmail, string userPassword);
         public Task<bool> CheckIfEmailAlreadyExists(string userEmail);

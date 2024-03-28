@@ -1,90 +1,76 @@
 function populateAircraftForm(id){
-    $.ajax({
-        url: 'https://localhost:7053/api/Aircraft/' + id, 
-        type: 'GET', 
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function(response) {
-            $('#AircraftNumber').val(response.aircraftNumber);
-            $('#AirLine').val(response.airLine);
-            $('#Source').append($('<option>', { value: response.source, text: response.source })).val(response.source);
-            $('#Destination').append($('<option>', { value: response.destination, text: response.destination })).val(response.destination);
- 
-       },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
+
+    function handleSuccess(response) {
+        console.log(response);
+        $('#AircraftNumber').val(response.aircraftNumber);
+        $('#AirLine').val(response.airLine);
+        $('#Source').append($('<option>', { value: response.sourceId, text: response.sourceName })).val(response.sourceId);
+        $('#Destination').append($('<option>', { value: response.destinationId, text: response.destinationName })).val(response.destinationId);
+
+    }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makeGetRequest('/Aircraft/' + id, handleSuccess, handleError);
+    
 }
 
 function insertAircraft(aircraft){  
+    function handleSuccess(response) {
+        window.location.href="../Views/AircraftsList.html"; 
+   }
 
-    $.ajax({
-        url: 'https://localhost:7053/api/Aircraft/InsertAircraft', 
-        type: 'POST', 
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        contentType: 'application/json',
-        data: JSON.stringify(aircraft), 
-        success: function(response) {
-            window.location.href="../Views/AircraftsList.html"; 
-       },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makePostRequest('/Aircraft/InsertAircraft',aircraft, handleSuccess, handleError);
+
 }
 
 function updateAircraft(aircraft){
     
+    function handleSuccess(response) {
+        window.location.href="../Views/AircraftsList.html"; 
+   }
 
-    $.ajax({
-        url: 'https://localhost:7053/api/Aircraft/UpdateAircraft', 
-        type: 'PUT', 
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        contentType: 'application/json',
-        data: JSON.stringify(aircraft), 
-        success: function(response) {
-            window.location.href="../Views/AircraftsList.html";   
-       },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makePutRequest('/Aircraft/UpdateAircraft',aircraft, handleSuccess, handleError);
 }
 
 function populateDropdowns(){
-    $.ajax({
-        url: 'https://localhost:7053/api/Airport', 
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function (data) {          
-            $('#Source').empty();
-            $('#Destination').empty();
-            
-            data.forEach(function (airport) {
-                var option = $('<option>');
-                option.val(airport.airportId); 
-                option.text(airport.airportName);       
 
-                $('#Source').append(option);
-                $('#Destination').append(option.clone());
-            });
-                
-            $('#Source').val(data[0].airportId);
-            $('#Destination').val(data[0].airportId);
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-            console.log(xhr.responseText);
-        }
-    });
+    function handleSuccess(data) {
+        $('#Source').empty();
+        $('#Destination').empty();
+        
+        data.forEach(function (airport) {
+            var option = $('<option>');
+            option.val(airport.airportId); 
+            option.text(airport.airportName);       
+
+            $('#Source').append(option);
+            $('#Destination').append(option.clone());
+        });
+            
+        $('#Source').val(data[0].airportId);
+        $('#Destination').val(data[0].airportId);
+    }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makeGetRequest('/Airport', handleSuccess, handleError);
 }
 
 $(document).ready(function(){
@@ -105,8 +91,8 @@ $(document).ready(function(){
             AircraftId:id,
             AircraftNumber: $('#AircraftNumber').val(),
             AirLine: $('#AirLine').val(),
-            Source: $('#Source').val(),
-            Destination: $('#Destination').val()
+            SourceId: $('#Source').val(),
+            DestinationId: $('#Destination').val()
         };
 
         if(id!=0) updateAircraft(aircraft);

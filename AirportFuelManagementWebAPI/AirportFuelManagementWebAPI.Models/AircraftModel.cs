@@ -13,10 +13,9 @@ namespace AirportFuelManagementWebAPI.Models
         public string AircraftNumber { get; set; } = null!;
 
         public string? AirLine { get; set; }
+        public int? SourceId { get; set; }
 
-        public string? Source { get; set; }
-
-        public string? Destination { get; set; }
+        public int? DestinationId { get; set; }
         public string? SourceName { get; set; }
         public string? DestinationName { get; set; }
 

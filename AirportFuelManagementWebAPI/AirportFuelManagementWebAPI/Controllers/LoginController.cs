@@ -14,13 +14,11 @@ namespace AirportFuelManagementWebAPI.Controllers
     {
 
         private readonly IBusiness business;
-        private readonly ILogger<LoginController> logger;
         private readonly IConfiguration config;
 
 
-        public LoginController(ILogger<LoginController> logger, IBusiness business,IConfiguration configuration)
+        public LoginController( IBusiness business,IConfiguration configuration)
         {
-            this.logger = logger;
             this.business = business;
             config = configuration;
 
@@ -44,12 +42,9 @@ namespace AirportFuelManagementWebAPI.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(config["Jwt:Issuer"], config["Jwt:Audience"],null,expires: DateTime.Now.AddMinutes(1),signingCredentials:credentials);
+            var token = new JwtSecurityToken(config["Jwt:Issuer"], config["Jwt:Audience"],null,expires: DateTime.Now.AddHours(1),signingCredentials:credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
-       
-
     }
 }

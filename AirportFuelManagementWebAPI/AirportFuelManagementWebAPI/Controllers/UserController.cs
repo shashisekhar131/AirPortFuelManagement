@@ -18,11 +18,9 @@ namespace AirportFuelManagementWebAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IBusiness business;
-        private readonly ILogger<UserController> logger;
 
-        public UserController(ILogger<UserController> logger, IBusiness business)
+        public UserController( IBusiness business)
         {
-            this.logger = logger;
             this.business = business;
         }
         [HttpPost]  

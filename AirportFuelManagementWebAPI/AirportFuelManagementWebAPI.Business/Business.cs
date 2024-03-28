@@ -1,4 +1,5 @@
 ﻿using AirportFuelManagementWebAPI.DAL;
+using AirportFuelManagementWebAPI.DAL.Models;
 using AirportFuelManagementWebAPI.Models;
 
 namespace AirportFuelManagementWebAPI.Business
@@ -11,27 +12,66 @@ namespace AirportFuelManagementWebAPI.Business
             this.dataAccess = dataAccess;
         }
 
-        public Task<AirportModel> GetAirportById(int id)
+        public async Task<AirportModel> GetAirportById(int id)
         {
-            return dataAccess.GetAirportById(id);
+            Airport tempairport = await dataAccess.GetAirportById(id);
+
+            AirportModel airport = new AirportModel()
+            {
+                AirportId = tempairport.AirportId,
+                AirportName = tempairport.AirportName,
+                FuelAvailable = tempairport.FuelAvailable,
+                FuelCapacity = tempairport.FuelCapacity
+            };
+            
+            return airport;
         }
 
-        public Task<List<AirportModel>> GetAllAirports()
+        public async Task<List<AirportModel>> GetAllAirports()
         {
-            return dataAccess.GetAllAirports();
+
+            List<AirportModel> airports = (await dataAccess.GetAllAirports())
+        .Select(s => new AirportModel
+        {
+            AirportId = s.AirportId,
+            AirportName = s.AirportName,
+            FuelAvailable = s.FuelAvailable,
+            FuelCapacity = s.FuelCapacity
+        })
+        .ToList();
+
+            return airports;
+
         }
 
         public Task<bool> InsertAirport(AirportModel airport)
         {
-            return dataAccess.InsertAirport(airport);
+            Airport tempAirport = new Airport
+            {
+                AirportName = airport.AirportName,
+                FuelAvailable = airport.FuelAvailable,
+                FuelCapacity = airport.FuelCapacity
+            };
+            return dataAccess.InsertAirport(tempAirport);
         }
         public Task<bool> UpdateAirport(AirportModel airport)
         {
             return dataAccess.UpdateAirport(airport);
         }
-        public Task<AircraftModel> GetAircraftById(int id)
+        public async Task<AircraftModel> GetAircraftById(int id)
         {
-            return dataAccess.GetAircraftById(id);
+            Aircraft tempAircraft = await dataAccess.GetAircraftById(id);
+
+            AircraftModel aircraft = new AircraftModel ()
+            {
+                AircraftId = tempAircraft.AircraftId,
+                AircraftNumber = tempAircraft.AircraftNumber,
+                AirLine = tempAircraft.AirLine,
+                SourceId = tempAircraft.SourceId,
+                DestinationId = tempAircraft.DestinationId
+            };
+
+            return aircraft;
         }
 
         public Task<List<AircraftModel>> GetAllAircrafts()
@@ -41,7 +81,14 @@ namespace AirportFuelManagementWebAPI.Business
 
         public Task<bool> InsertAircraft(AircraftModel aircraft)
         {
-            return dataAccess.InsertAircraft(aircraft);
+            Aircraft tempAircraft = new Aircraft
+            {
+                AircraftNumber = aircraft.AircraftNumber,
+                AirLine = aircraft.AirLine,
+                SourceId = aircraft.SourceId,
+                DestinationId = aircraft.DestinationId
+            };
+            return dataAccess.InsertAircraft(tempAircraft);
         }
 
         public Task<bool> UpdateAircraft(AircraftModel aircraft)
@@ -53,7 +100,7 @@ namespace AirportFuelManagementWebAPI.Business
         {
             return dataAccess.GetAllTransactions();
         }
-        public Task<bool> InsertTransaction(FuelTransactionModel transaction)
+        public Task<Tuple<string, bool>> InsertTransaction(FuelTransactionModel transaction)
         {
             return dataAccess.InsertTransaction(transaction);
         }

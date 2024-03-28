@@ -11,9 +11,9 @@ public partial class Aircraft
 
     public string? AirLine { get; set; }
 
-    public string? Source { get; set; }
+    public int? SourceId { get; set; }
 
-    public string? Destination { get; set; }
+    public int? DestinationId { get; set; }
 
     public virtual ICollection<FuelTransaction> FuelTransactions { get; set; } = new List<FuelTransaction>();
 }

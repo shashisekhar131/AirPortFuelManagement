@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {}
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {}
   },
   "projects": {
-    "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
+    "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
+        "projectUniqueName": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
         "projectName": "AirportFuelManagementWebAPI.Utils",
-        "projectPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
+        "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\AirportFuelManagementWebAPI.Utils.csproj",
         "packagesPath": "C:\\Users\\belagallus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belagallus\\OneDrive\\Desktop\\mindfire-assignments-\\AirportFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\obj\\",
+        "outputPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belagallus\\AppData\\Roaming\\NuGet\\NuGet.Config",

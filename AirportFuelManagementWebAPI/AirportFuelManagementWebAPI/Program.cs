@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Diagnostics;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +54,25 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseExceptionHandler(
+    options =>
+    {
+        options.Run(
+            async context =>
+            {
+                context.Response.StatusCode =(int)HttpStatusCode.InternalServerError;
+                var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+                if (exceptionHandlerPathFeature?.Error != null)
+                {
+                    var logger = context.RequestServices.GetRequiredService<AirportFuelManagementWebAPI.Utils.ILogger>();
+                    var exception = exceptionHandlerPathFeature.Error;
+                    logger.LogException(exception);
+                }
+            }
+        );
+    }
+);
 app.UseCors("AllowOrigin");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

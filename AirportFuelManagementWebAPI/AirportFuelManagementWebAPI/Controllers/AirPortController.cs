@@ -13,11 +13,9 @@ namespace AirportFuelManagementWebAPI.Controllers
     {
 
         private IBusiness business;
-        private readonly ILogger<AirPortController> logger;
 
-        public AirPortController(ILogger<AirPortController> logger, IBusiness business)
+        public AirPortController( IBusiness business)
         {
-            this.logger = logger;
             this.business = business;
         }
         [Authorize]
@@ -25,7 +23,11 @@ namespace AirportFuelManagementWebAPI.Controllers
         public async Task<ActionResult> GetAllAirports()
         {
        
-            List<AirportModel> airports = await business.GetAllAirports();           
+            List<AirportModel> airports = await business.GetAllAirports();  
+            if(airports.Count == 0)
+            {
+                return NotFound();
+            }
             return Ok(airports);
         }
         [Authorize]
@@ -34,6 +36,10 @@ namespace AirportFuelManagementWebAPI.Controllers
         {
 
             List<AirportModel> airports = await business.GetAllAirports();
+            if (airports.Count == 0)
+            {
+                return NotFound();
+            }
             return Ok(airports);
         }
         [Authorize]
@@ -42,6 +48,10 @@ namespace AirportFuelManagementWebAPI.Controllers
         {
 
             AirportModel airport = await business.GetAirportById(id);
+            if (airport == null)
+            {
+                return NotFound();
+            }
             return Ok(airport);
         }
         [Authorize]
@@ -56,7 +66,7 @@ namespace AirportFuelManagementWebAPI.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest(new { Message = "Failed to insert airport" });
             }
         }
         [Authorize]
@@ -71,7 +81,7 @@ namespace AirportFuelManagementWebAPI.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest(new { Message = "Failed to update airport" });
             }
         }
 

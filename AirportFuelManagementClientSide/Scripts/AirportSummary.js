@@ -7,28 +7,23 @@ $(document).ready(function () {
         pageLength: 5 
         });
 
-        $.ajax({
-            url: 'https://localhost:7053/api/Airport/GetAiportSummary', 
-            type: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-            },
-            success: function (data) {
-              
-                data.forEach(function (airport) {
-                    airportTable.row.add([
-                        airport.airportName,
-                        airport.fuelAvailable
-                    ]);
-                });
-                airportTable.draw();
-            },
-            error: function (xhr, status, error) {
-                console.log(error);
-                console.log(xhr.responseText);
-            }
-        });
-
+        function handleSuccess(data) {            
+            data.forEach(function (airport) {
+                airportTable.row.add([
+                    airport.airportName,
+                    airport.fuelAvailable
+                ]);
+            });
+            airportTable.draw();
+        }
+    
+        function handleError(xhr, status, error) {
+            console.log(error);
+            console.log(xhr.responseText);
+        }
+    
+        makeGetRequest('/Airport/GetAiportSummary', handleSuccess, handleError);
+    
     $('#exportPdfBtn').on('click', function () {
      var columns = ["AirportName", "Fuel Available"];
      var rows = [];

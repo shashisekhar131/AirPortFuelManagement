@@ -35,8 +35,8 @@ public partial class AirportFuelManagementContext : DbContext
             entity.Property(e => e.AircraftId).HasColumnName("AircraftID");
             entity.Property(e => e.AirLine).HasMaxLength(100);
             entity.Property(e => e.AircraftNumber).HasMaxLength(50);
-            entity.Property(e => e.Destination).HasMaxLength(100);
-            entity.Property(e => e.Source).HasMaxLength(100);
+            entity.Property(e => e.DestinationId).HasColumnName("DestinationID");
+            entity.Property(e => e.SourceId).HasColumnName("SourceID");
         });
 
         modelBuilder.Entity<Airport>(entity =>
@@ -66,7 +66,6 @@ public partial class AirportFuelManagementContext : DbContext
 
             entity.HasOne(d => d.Aircraft).WithMany(p => p.FuelTransactions)
                 .HasForeignKey(d => d.AircraftId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__FuelTrans__Aircr__3C69FB99");
 
             entity.HasOne(d => d.Airport).WithMany(p => p.FuelTransactions)

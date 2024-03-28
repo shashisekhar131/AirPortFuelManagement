@@ -1,32 +1,26 @@
 function fetchAircrafts() {
-    $.ajax({
-        url: 'https://localhost:7053/api/Aircraft',
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function (data) {                  
+    function handleSuccess(data) {     
+       
+        $('#aircraftName').empty();
+        $.each(data, function (index, aircraft) {
+            $('#aircraftName').append('<option value="' + aircraft.aircraftId + '">' + aircraft.aircraftNumber + '</option>');
+        });
+        $('#aircraftName').val(data[0].aircraftId);
+    }
 
-            $('#aircraftName').empty();
-            $.each(data, function (index, aircraft) {
-                $('#aircraftName').append('<option value="' + aircraft.aircraftId + '">' + aircraft.aircraftNumber + '</option>');
-            });
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-        }
-    });
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makeGetRequest('/Aircraft', handleSuccess, handleError);
+
 }
 
 
 function fetchParentTransaction(id) {
-    $.ajax({
-        url: 'https://localhost:7053/api/Transaction/GetTransactionById/' + id,
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function (data) {         
+        
+    function handleSuccess(data) {     
         console.log(data)
         $('#airportName').append($('<option>', {
             value: data.airportId,
@@ -41,23 +35,28 @@ function fetchParentTransaction(id) {
 
         // If transaction type is 'IN', set it and disable the aircraft dropdown
         if (data.transactionType === 1) {
-            $('#transactionType').val('OUT');
-            $('#aircraftName').prop('disabled', true);
-        } else { // If transaction type is 'OUT', set it and populate the aircraft dropdown
-            $('#transactionType').val('IN');
+            $('#transactionType').val('OUT');            
             fetchAircrafts(); // Call the function to populate aircraft dropdown
             $('#aircraftName').val(data.aircraftId);
+        } else { // If transaction type is 'OUT', set it and populate the aircraft dropdown
+            $('#transactionType').val('IN');
+            $('#aircraftName').prop('disabled', true);
+
         }
 
         // Disable all form fields to make it read-only
         $('#airportName').prop('disabled', true);
         $('#transactionType').prop('disabled', true);
         $('#parentID').prop('disabled',true);
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-        }
-    });
+    }
+
+    function handleError(xhr, status, error) {
+        console.log(error);
+        console.log(xhr.responseText);
+    }
+
+    makeGetRequest( '/Transaction/GetTransactionById/' + id, handleSuccess, handleError);
+
 }
 
 $(document).ready(function () {          
@@ -73,31 +72,26 @@ $('#transactionForm').submit(function (event) {
     
     var  Transaction = {
         transactionType: (($('#transactionType').val() == "IN")?1:2),
+        aircraftId:($('#transactionType').val() == "IN")?null:parseInt($('#aircraftName').val()) ,
         airportId: parseInt($('#airportName').val()),
-        aircraftId: (($('#transactionType').val() == "IN")?0:parseInt($('#aircraftName').val())) ,
         quantity: parseFloat($('#quantity').val()),
         TransactionIdparent:id
     };
+    function handleSuccess(response) {
+        if(response.item2)window.location.href="../Views/TransactionsList.html";
+        $('.toast-body').html(response.item1);
+        $('#toastContainer .toast').toast('show'); 
+    }
 
-    $.ajax({
-        url: 'https://localhost:7053/api/Transaction/InsertTransaction', 
-        type: 'POST',
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        contentType: 'application/json',
-        data: JSON.stringify(Transaction),
-        success: function (response) {
-        console.log(response);
-        window.location.href="../Views/TransactionsList.html";
+    function handleError(xhr, status, error) {
+        if (xhr.status === 500) {
+            $('#toastContainer .toast').toast('show');
+          } else {
+            alert("An error occurred while processing your request. Please try again later.");
+          }  
+    }
 
-        },
-        error: function (xhr, status, error) {
-            if (xhr.status === 500) {
-                $('#toastContainer .toast').toast('show');
-              } else {
-                alert("An error occurred while processing your request. Please try again later.");
-              }         }
-    });
+    makePostRequest('/Transaction/InsertTransaction',Transaction, handleSuccess, handleError);
+
 });
 });

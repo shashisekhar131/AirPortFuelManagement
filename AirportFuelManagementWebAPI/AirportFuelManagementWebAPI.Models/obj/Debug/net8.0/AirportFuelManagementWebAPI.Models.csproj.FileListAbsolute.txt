@@ -22,3 +22,15 @@ C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement
 C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\refint\AirportFuelManagementWebAPI.Models.dll
 C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.pdb
 C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\ref\AirportFuelManagementWebAPI.Models.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\bin\Debug\net8.0\AirportFuelManagementWebAPI.Models.deps.json
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\bin\Debug\net8.0\AirportFuelManagementWebAPI.Models.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\bin\Debug\net8.0\AirportFuelManagementWebAPI.Models.pdb
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.AssemblyInfoInputs.cache
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.AssemblyInfo.cs
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.csproj.CoreCompileInputs.cache
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.sourcelink.json
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\refint\AirportFuelManagementWebAPI.Models.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\AirportFuelManagementWebAPI.Models.pdb
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Models\obj\Debug\net8.0\ref\AirportFuelManagementWebAPI.Models.dll

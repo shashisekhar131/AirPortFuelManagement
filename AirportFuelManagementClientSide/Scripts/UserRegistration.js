@@ -9,20 +9,19 @@ $(document).ready(function () {
     Password: $('#password').val(),
     Name: $('#name').val()
     };
-    $.ajax({
-        url: 'https://localhost:7053/api/User',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(user),
-        success: function (response) {
-            if(response){
-                window.location.href='../Views/UserLogin.html';
-            }
-            console.log('Registration successful:', response);
-        },
-        error: function (xhr, status, error) {
-            console.log('Registration failed:', error);
+
+    function handleSuccess(response) {
+        if(response){
+            window.location.href='../Views/UserLogin.html';
         }
-    });
+        console.log('Registration successful:', response);
+      }
+
+    function handleError(xhr, status, error) {
+        console.log('Registration failed:', error);
+    }
+
+    makePostRequest('/User',user, handleSuccess, handleError);
+
 });
 });

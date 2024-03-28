@@ -5,35 +5,31 @@ $(document).ready(function () {
         pageLength: 3
         });
 
-    $.ajax({
-        url: 'https://localhost:7053/api/Transaction/FuelConsumptionReport',
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
-        },
-        success: function (data) {
-            console.log(data);
-           data.forEach(function (record) {
-            var airportData = {
-                airportName: record.airportName,
-                airportFuelAvailable: record.airportFuelAvailable,
-                transactions: record.transactions
-            };
-
-            fuelConsumptionTable.row.add([
-                airportData.airportName,
-                renderTransactions(airportData.transactions),
-                airportData.airportFuelAvailable
-            ]);
-        });
-
-        fuelConsumptionTable.draw();
-        },
-        error: function (xhr, status, error) {
+        function handleSuccess(data) {            
+            data.forEach(function (record) {
+                var airportData = {
+                    airportName: record.airportName,
+                    airportFuelAvailable: record.airportFuelAvailable,
+                    transactions: record.transactions
+                };
+    
+                fuelConsumptionTable.row.add([
+                    airportData.airportName,
+                    renderTransactions(airportData.transactions),
+                    airportData.airportFuelAvailable
+                ]);
+            });
+    
+            fuelConsumptionTable.draw();
+        }
+    
+        function handleError(xhr, status, error) {
             console.log(error);
             console.log(xhr.responseText);
         }
-    });
+    
+        makeGetRequest('/Transaction/FuelConsumptionReport', handleSuccess, handleError);
+   
 
     function renderTransactions(transactions) {
         if(transactions.length == 0) return "";

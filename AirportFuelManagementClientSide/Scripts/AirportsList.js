@@ -8,15 +8,8 @@ function loadAirportData(jwtToken) {
             window.location.href = "../Views/AirportForm.html?id=" + airportId;
         });
     
-    $.ajax({
-        url: 'https://localhost:7053/api/Airport', 
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + jwtToken 
-        },
-        success: function (data) {
+        function handleSuccess(data) {
             airportTable.clear();
-            // Add each airport to the DataTable
             data.forEach(function (airport) {
                 var editButton = '<button class="btn btn-primary btn-sm edit-btn" data-airport-id="' + airport.airportId + '">Edit</button>';
 
@@ -28,15 +21,17 @@ function loadAirportData(jwtToken) {
                     editButton
                 ]);
             });
-            // Draw the updated DataTable
             airportTable.draw();
-           
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
+        }
+    
+        function handleError(xhr, status, error) {
+            alert(status);
+            console.log(error,status);
             console.log(xhr.responseText);
         }
-    });
+    
+        makeGetRequest('/Airport', handleSuccess, handleError);
+    
 }
 
 $(document).ready(function () {

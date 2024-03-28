@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportFuelManagementWebAPI", "AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.csproj", "{9191A72C-AC53-432A-BA6F-8155D0410ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportFuelManagementWebAPI", "AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.csproj", "{9191A72C-AC53-432A-BA6F-8155D0410ACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportFuelManagementWebAPI.Models", "AirportFuelManagementWebAPI.Models\AirportFuelManagementWebAPI.Models.csproj", "{C3B56BC0-527E-448E-8FFD-2770D30D63FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportFuelManagementWebAPI.Models", "AirportFuelManagementWebAPI.Models\AirportFuelManagementWebAPI.Models.csproj", "{C3B56BC0-527E-448E-8FFD-2770D30D63FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportFuelManagementWebAPI.DAL", "AirportFuelManagementWebAPI.DAL\AirportFuelManagementWebAPI.DAL.csproj", "{E0CB5348-7F3C-4CAE-9DB6-9CBCD78EFAC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportFuelManagementWebAPI.DAL", "AirportFuelManagementWebAPI.DAL\AirportFuelManagementWebAPI.DAL.csproj", "{E0CB5348-7F3C-4CAE-9DB6-9CBCD78EFAC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportFuelManagementWebAPI.Business", "AirportFuelManagementWebAPI.Business\AirportFuelManagementWebAPI.Business.csproj", "{0670650B-F3B1-4932-BE59-10C1A991DDA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportFuelManagementWebAPI.Business", "AirportFuelManagementWebAPI.Business\AirportFuelManagementWebAPI.Business.csproj", "{0670650B-F3B1-4932-BE59-10C1A991DDA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportFuelManagementWebAPI.Utils", "AirportFuelManagementWebAPI.Utils\AirportFuelManagementWebAPI.Utils.csproj", "{6331085D-F151-40CA-8E30-40E43CB7FDCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportFuelManagementWebAPI.Utils", "AirportFuelManagementWebAPI.Utils\AirportFuelManagementWebAPI.Utils.csproj", "{6331085D-F151-40CA-8E30-40E43CB7FDCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportFuelManagementWebAPI.UnitTests", "AirportFuelManagementWebAPI.UnitTests\AirportFuelManagementWebAPI.UnitTests.csproj", "{999C248B-E412-4013-9E7A-90CA5631F10C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6331085D-F151-40CA-8E30-40E43CB7FDCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6331085D-F151-40CA-8E30-40E43CB7FDCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6331085D-F151-40CA-8E30-40E43CB7FDCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999C248B-E412-4013-9E7A-90CA5631F10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999C248B-E412-4013-9E7A-90CA5631F10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999C248B-E412-4013-9E7A-90CA5631F10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999C248B-E412-4013-9E7A-90CA5631F10C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

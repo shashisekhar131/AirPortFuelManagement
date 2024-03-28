@@ -22,3 +22,15 @@ C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement
 C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\refint\AirportFuelManagementWebAPI.Utils.dll
 C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.pdb
 C:\Users\belagallus\OneDrive\Desktop\mindfire-assignments-\AirportFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\ref\AirportFuelManagementWebAPI.Utils.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\bin\Debug\net8.0\AirportFuelManagementWebAPI.Utils.deps.json
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\bin\Debug\net8.0\AirportFuelManagementWebAPI.Utils.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\bin\Debug\net8.0\AirportFuelManagementWebAPI.Utils.pdb
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.AssemblyInfoInputs.cache
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.AssemblyInfo.cs
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.csproj.CoreCompileInputs.cache
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.sourcelink.json
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\refint\AirportFuelManagementWebAPI.Utils.dll
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\AirportFuelManagementWebAPI.Utils.pdb
+D:\Projects\AirPortFuelManagement\AirportFuelManagementWebAPI\AirportFuelManagementWebAPI.Utils\obj\Debug\net8.0\ref\AirportFuelManagementWebAPI.Utils.dll
