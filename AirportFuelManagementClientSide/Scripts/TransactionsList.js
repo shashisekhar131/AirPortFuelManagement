@@ -22,7 +22,8 @@
           
         var transactionTable = $('#transactionTable').DataTable({
             lengthMenu:  [3,5,10,15] , 
-            pageLength: 3
+            pageLength: 3,
+            order: [[3, 'asc']] 
             });
         $('#transactionTable tbody').on('click', '.reverse-transaction-btn', function() {
             var id = $(this).data('transaction-id');

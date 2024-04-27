@@ -1,7 +1,7 @@
 function populateAircraftForm(id){
 
     function handleSuccess(response) {
-        console.log(response);
+        
         $('#AircraftNumber').val(response.aircraftNumber);
         $('#AirLine').val(response.airLine);
         $('#Source').append($('<option>', { value: response.sourceId, text: response.sourceName })).val(response.sourceId);

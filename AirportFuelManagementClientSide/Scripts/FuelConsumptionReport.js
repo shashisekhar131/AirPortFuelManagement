@@ -2,7 +2,8 @@
 $(document).ready(function () {
     var fuelConsumptionTable = $('#fuelConsumptionTable').DataTable({
         lengthMenu:  [3,5,10,15] , 
-        pageLength: 3
+        pageLength: 3,
+        order: [[0, 'asc']] 
         });
 
         function handleSuccess(data) {            

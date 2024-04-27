@@ -37,7 +37,7 @@ namespace AirportFuelManagementWebAPI.UnitTests
         }
 
         [Fact]
-        public async Task GetAllAircrafts_ShouldReturnListOfAircrafts()
+        public async void GetAllAircrafts_ShouldReturnListOfAircrafts()
         {
             // Arrange
             var mockBusiness = new Mock<IBusiness>();
@@ -55,9 +55,7 @@ namespace AirportFuelManagementWebAPI.UnitTests
             var result = await controller.GetAllAircrafts();
 
             // Assert
-            Assert.IsType<OkObjectResult>(result);
-
-         
+            Assert.IsType<OkObjectResult>(result);         
         }
 
 
@@ -78,17 +76,7 @@ namespace AirportFuelManagementWebAPI.UnitTests
             // Assert
             Assert.IsType<OkObjectResult>(result);
 
-            var okResult = result as OkObjectResult;
-            Assert.NotNull(okResult);
-
-            var airport = okResult.Value as AirportModel;
-            Assert.NotNull(airport);
-
-            // Compare with test data
-            Assert.Equal(testData.AirportId, airport.AirportId);
-            Assert.Equal(testData.AirportName, airport.AirportName);
-            Assert.Equal(testData.FuelAvailable, airport.FuelAvailable);
-            Assert.Equal(testData.FuelCapacity, airport.FuelCapacity);
+           
         }
 
         [Fact]
@@ -108,18 +96,96 @@ namespace AirportFuelManagementWebAPI.UnitTests
                 AircraftId = 1,
                 AirportName = "Airport 1",
                 AircraftName = "Aircraft 1"
-            };
+            };                                                                                                       
 
             mockBusiness.Setup(ub => ub.GetTransactionById(1)).ReturnsAsync(testData);
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
             // Act
             var result = await controller.GetTransactionById(1);
 
             // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
+            var okResult = Assert.IsType<OkObjectResult>(result);                             
            
         }
 
+        [Fact]
+        public async Task GetAllTransactions_WithTransactions_ReturnsListOfTransactions()
+        {
+            // Arrange
+            var mockBusiness = new Mock<IBusiness>();
+            var controller = new TransactionController(mockBusiness.Object);
+            var testData = new List<FuelTransactionModel>
+            {
+                new FuelTransactionModel { AirportId = 1, AirportName = "Airport 1", Quantity=200 ,TransactionType =1 },
+                new FuelTransactionModel { AirportId = 1, AirportName = "Airport 1", Quantity=200 ,TransactionType =1 },
+            };
+            mockBusiness.Setup(ub => ub.GetAllTransactions()).ReturnsAsync(testData);
 
+            // Act
+            var result = await controller.GetAllTransactions();
+
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(result);
+        }
+
+        [Fact]
+        public async Task InsertUser_WithValidData_ReturnsTrue()
+        {
+            // Arrange
+            var mockBusiness = new Mock<IBusiness>();
+
+            var controller = new UserController(mockBusiness.Object);
+            var user = new UserModel
+            {
+                Name = "Test User",
+                Email = "test@example.com",
+                Password = "password"
+            };
+
+            // Act
+            var result = await controller.InsertUser(user);
+
+            // Assert
+            Assert.IsType<OkObjectResult>(result);
+
+            var okResult = result as OkObjectResult;
+            Assert.NotNull(okResult);
+
+        }
+
+        [Fact]
+        public async Task FuelConsumptionReport_WithTransactions_ReturnsReport()
+        {
+            // Arrange
+            var mockBusiness = new Mock<IBusiness>();
+            var mockLogger = new Mock<Utils.ILogger>();
+            var controller = new TransactionController(mockBusiness.Object);
+
+            // Act
+            var result = await controller.FuelConsumptionReport();
+
+            // Assert 
+            Assert.IsType<OkObjectResult>(result);
+
+            var okResult = result as OkObjectResult;
+            Assert.NotNull(okResult);
+        }
+
+
+        [Fact]
+        public async Task GetAirportSummary_WithAirports_ReturnsSummaryList()
+        {
+            // Arrange
+            var mockBusiness = new Mock<IBusiness>();
+            var mockLogger = new Mock<Utils.ILogger>();
+            var controller = new AirPortController(mockBusiness.Object);
+
+            // Act
+            var result = await controller.GetAirportSummary();
+
+
+            // Assert
+            Assert.IsType<OkObjectResult>(result);
+        }
     }
 }

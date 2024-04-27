@@ -225,6 +225,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj": {
+                "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Business\\AirportFuelManagementWebAPI.Business.csproj"
+              },
               "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj": {
                 "projectPath": "D:\\Projects\\AirPortFuelManagement\\AirportFuelManagementWebAPI\\AirportFuelManagementWebAPI.Models\\AirportFuelManagementWebAPI.Models.csproj"
               },

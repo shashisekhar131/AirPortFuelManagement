@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirportFuelManagementWebAPI.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe1d6a81f596781fddd79ac1a0754e11d0e66edf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf10c6098267f8fe7a0db413d4a16f9ab22c9207")]
 [assembly: System.Reflection.AssemblyProductAttribute("AirportFuelManagementWebAPI.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AirportFuelManagementWebAPI.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

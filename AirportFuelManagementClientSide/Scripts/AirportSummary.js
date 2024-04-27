@@ -4,7 +4,8 @@ $(document).ready(function () {
 
     var airportTable = $('#airportTable').DataTable({
         lengthMenu:  [5, 10, 15, 20] , 
-        pageLength: 5 
+        pageLength: 5,
+        order: [[0, 'asc']] 
         });
 
         function handleSuccess(data) {            

@@ -1,7 +1,8 @@
-function loadAirportData(jwtToken) {
+function loadAirportData() {
     var airportTable = $('#airportTable').DataTable({
         lengthMenu:  [5, 10, 15, 20] , 
-        pageLength: 5 
+        pageLength: 5,
+        order: [[1, 'asc']] 
         });
         $('#airportTable tbody').on('click', '.edit-btn', function() {
             var airportId = $(this).data('airport-id');
@@ -9,6 +10,7 @@ function loadAirportData(jwtToken) {
         });
     
         function handleSuccess(data) {
+            console.log(data);
             airportTable.clear();
             data.forEach(function (airport) {
                 var editButton = '<button class="btn btn-primary btn-sm edit-btn" data-airport-id="' + airport.airportId + '">Edit</button>';
@@ -35,9 +37,5 @@ function loadAirportData(jwtToken) {
 }
 
 $(document).ready(function () {
-    var jwtToken = (localStorage.getItem('jwtToken') || null);
-    if(jwtToken == null) window.location.href = 'UserLogin.html';
-    else{
-        loadAirportData(jwtToken);
-    }    
+   loadAirportData();    
 });

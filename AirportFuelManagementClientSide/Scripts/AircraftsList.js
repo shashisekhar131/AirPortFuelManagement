@@ -3,7 +3,8 @@ function loadAircraftData() {
    
     var aircraftTable = $('#aircraftTable').DataTable({
         lengthMenu:  [3, 5, 10, 15, 20] , 
-        pageLength: 3 
+        pageLength: 3,
+        order: [[1, 'asc']] 
         });
     $('#aircraftTable tbody').on('click', '.edit-btn', function() {
         var aircraftId = $(this).data('aircraft-id');
@@ -11,7 +12,6 @@ function loadAircraftData() {
     });
 
     function handleSuccess(data) {
-        console.log(data);
             aircraftTable.clear();
             data.forEach(function (aircraft) {
                 var editButton = '<button class="btn btn-primary btn-sm edit-btn" data-aircraft-id="' + aircraft.aircraftId + '">Edit</button>';

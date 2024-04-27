@@ -9,6 +9,7 @@
       "AirportFuelManagementWebAPI.UnitTests/1.0.0": {
         "dependencies": {
           "AirportFuelManagementWebAPI": "1.0.0",
+          "AirportFuelManagementWebAPI.Business": "1.0.0",
           "AirportFuelManagementWebAPI.Models": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.6.0",
           "Moq": "4.20.70",
